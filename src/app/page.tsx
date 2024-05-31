@@ -1,14 +1,12 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-// import Skeleton from 'react-loading-skeleton'
 import Banner from "./components/Banner/Banner";
 import Sidebar from "./components/Sidebar/Sidebar";
 import MovieBox from "./components/MovieBox/MovieBox";
-import fetchData, { options } from "./utils/fetchData";
+import { options } from "./utils/fetchData";
 import { randomNameMovie } from "./utils/randomName";
 
-// import 'react-loading-skeleton/dist/skeleton.css'
+
 export interface Movie {
   id: number;
   title: string;
@@ -22,7 +20,7 @@ export interface Movie {
 export default function Home() {
 
   const [movies, setMovies] = useState<Movie[]|null>(null)
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<null|boolean>(null);
   const [bannerMovie, setBannerMovie] = useState<Movie|null>(null)
 
@@ -48,18 +46,19 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="flex flex-col justify-between">
-      <Sidebar />
-      <Banner movieData={bannerMovie} buttonLink="#" />
-      <div className="flex flex-wrap ml-20 w-12/12 lg:justify-between sm:justify-center">
-        {loading 
-          ? <p>Loading...</p> 
-          :  movies?.map((data, index) => (
-              <MovieBox movieData={data} key={index} />
-            ))
-        }
-      </div>
-     
-    </main>
+    <>
+      <main className="flex flex-col justify-between">
+        <Sidebar />
+        <Banner movieData={bannerMovie} buttonLink="#" />
+        <div className="flex flex-wrap ml-20 w-11/12 lg:justify-between sm:justify-center">
+          {loading 
+            ? <p>Loading...</p> 
+            :  movies?.map((data, index) => (
+                <MovieBox movieData={data} key={index} />
+              ))
+          }
+        </div>
+      </main>
+    </>
   );
 }

@@ -9,7 +9,7 @@ interface MovieProps {
 const MovieBox = ({ movieData }: MovieProps) => {
  
   return (
-    <div className="w-96 flex max-w-xl flex-col justify-between py-8">
+    <div className="w-80 flex max-w-xl flex-col justify-between py-8">
       {/* <img className="w-full h-48 object-cover object-center" src={imageUrl} alt={title} /> */}
       <div className="relative w-full h-48">
         <Image
