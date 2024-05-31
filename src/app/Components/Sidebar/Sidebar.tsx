@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { FaHome, FaUser, FaCog } from 'react-icons/fa'; 
 
 // interface SidebarProps {
@@ -12,15 +13,12 @@ const Sidebar = () => {
         <h1 className="text-2xl font-semibold">MyApp</h1>
       </div> */}
       <nav className="mt-24">
-        <a href="#" className="flex items-center px-4 py-10 text-emerald-300 hover:bg-gray-700 hover:text-white">
+        <Link href="/" className="flex items-center px-4 py-10 text-emerald-300 hover:bg-gray-700 hover:text-white">
           <FaHome className="ml-2 text-2xl" />
-        </a>
-        <a href="#" className="flex items-center px-4 py-10 text-emerald-300 hover:bg-gray-700 hover:text-white">
+        </Link>
+        <Link href="#" className="flex items-center px-4 py-10 text-emerald-300 hover:bg-gray-700 hover:text-white">
           <FaUser className="ml-2 text-2xl" />
-        </a>
-        <a href="#" className="flex items-center px-4 py-10 text-emerald-300 hover:bg-gray-700 hover:text-white">
-          <FaCog className="ml-2 text-2xl" />
-        </a>
+        </Link>
       </nav>
     </div>
   );
