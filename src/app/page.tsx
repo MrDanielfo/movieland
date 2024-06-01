@@ -49,8 +49,8 @@ export default function Home() {
     <>
       <main className="flex flex-col justify-between">
         <Sidebar />
-        <Banner movieData={bannerMovie} buttonLink="#" />
-        <div className="flex flex-wrap ml-20 w-11/12 lg:justify-between sm:justify-center">
+        <Banner movieData={bannerMovie} />
+        <div data-testid="movies-container" className="flex flex-wrap ml-20 w-11/12 lg:justify-between sm:justify-center">
           {loading 
             ? <p>Loading...</p> 
             :  movies?.map((data, index) => (

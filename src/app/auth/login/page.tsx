@@ -6,8 +6,8 @@ import { FormEvent, useState } from 'react';
 
 const LoginForm = () => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const [failedAuthMessage, setFailedAuthMessage] = useState<string|null>(null)
 
   const router = useRouter();

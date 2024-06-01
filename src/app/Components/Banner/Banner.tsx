@@ -4,11 +4,10 @@ import Link from "next/link";
 
 interface BannerProps {
   movieData: Movie | null;
-  buttonLink?: string;
 }
 
 
-const Banner: FC<BannerProps> = ({ movieData, buttonLink }) => {
+const Banner: FC<BannerProps> = ({ movieData }) => {
   let imageUrl = `https://image.tmdb.org/t/p/w500${movieData?.poster_path}`
   return (
     <div 

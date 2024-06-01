@@ -10,7 +10,6 @@ export default async function fetchData(url: string) {
   try {
 
     const response = await fetch(url, options);
-    console.log(response)
     const data = await response.json();
     return data
   } catch (error) {
